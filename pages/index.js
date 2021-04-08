@@ -5,7 +5,7 @@ export default function Home () {
     <>
       <Head>Alex Plaetzer's Assorted Blog</Head>
       <div>
-        <p>Welcome to the blog</p>
+        <p>Welcome to my blog</p>
       </div>
     </>
   )
