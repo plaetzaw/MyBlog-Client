@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+// Molecules
+import FormInput from '../components/molecules/FormInput'
+import FormLabel from '../components/molecules/FormLabel'
+import LoginButton from '../components/molecules/ActionButton'
+
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
