@@ -1,22 +1,19 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import axios from 'axios'
 
 // Molecules
 import FormInput from '../components/molecules/FormInput'
 import FormLabel from '../components/molecules/FormLabel'
 import LoginButton from '../components/molecules/ActionButton'
 
-const Login = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-
-  const Title = styled.h1`
-font-size: 24px;
+const Title = styled.h1`
+font-size: 30px;
 text-align: center;
 font-family: Rockwell;
 `
 
-  const ContentBlock = styled.div`
+const ContentBlock = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,9 +26,8 @@ font-family: Rockwell;
   min-height: 100vh;
   `
 
-  const Form = styled.form`
+const Form = styled.form`
   // display: flex;
-
   flex: 0 1;
   flex-direction: column;
   background-color: #28292B;
@@ -39,64 +35,37 @@ font-family: Rockwell;
   margin-right: 35px;
   margin-left: 35px;
   margin-top: 35px;
-  // // border: 1px dashed #28292A;
+  // border: 1px dashed #28292A;
   box-sizing: border-box;
   border-radius: 8px;
   `
 
-  const FormLabel = styled.label`
-// display: flex;
-// justify-content: center;
-// align-items: center;
-color: ${props => props.invalidField ? '#FF6464' : '#ffffff'};
-font-style: normal;
-font-weight: bold;
-font-size: 15px;
-margin:0 .8em;
-line-height: 18px;
-display: flex;
-align-items: center;
-font-family: Helvetica Neu;
-padding:1.6em 0 .2em 0;
-`
+const Login = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-  const FormInput = styled.input`
-// display: flex;
-// justify-content: center;
-// align-items: center;
-border-radius: 8px;
-margin:0 .8em;
-border: ${props => props.invalidField ? '3px solid #FF6464' : '3px solid #F3F3F3'};
-padding:.8em .5em;
-width: 75%;
-`
-
-  const LoginButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-width: 150px;
-height: 50px;
-text-align: center;
-font-family: Rockwell;
-border-radius: 8px;
-margin: 2em 0 0 .8em;
-`
   const onClick = async (e) => {
     e.preventDefault()
-    console.log('hello')
+    console.log('Starting Post')
+    const LoginObj = {
+      email: email,
+      password: password
+    }
+    console.log(LoginObj)
+    axios.post('http://localhost:8080/login', LoginObj)
+    console.log('Made the post')
   }
 
   return (
     <ContentBlock>
       <Title>Login</Title>
-      <FormLabel>Username</FormLabel>
+      <FormLabel>email</FormLabel>
       <FormInput
         type='text'
         name='name'
-        value={username}
-        placeholder='Username'
-        onChange={(e) => { setUsername(e.target.value) }}
+        value={email}
+        placeholder='email'
+        onChange={(e) => { setEmail(e.target.value) }}
       />
       <FormLabel>Password</FormLabel>
 

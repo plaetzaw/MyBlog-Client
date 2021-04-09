@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FormLabel = styled.label`
+const FormLabel = styled.label`
 // display: flex;
 // justify-content: center;
 // align-items: center;
@@ -15,3 +15,4 @@ align-items: center;
 font-family: Helvetica Neu;
 padding:1.6em 0 .2em 0;
 `
+export default FormLabel
