@@ -13,15 +13,20 @@ font-family: Rockwell;
 
   const ContentBlock = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   flex-basis: 100%;
-  background-color: teal;
+  background-color: #057CE5;
+  // background-color: ${props => props.Azure};
   padding: 0;
   margin 0;
   min-height: 100vh;
   `
 
   const Form = styled.form`
+  // display: flex;
+
   flex: 0 1;
   flex-direction: column;
   background-color: #28292B;
@@ -29,12 +34,15 @@ font-family: Rockwell;
   margin-right: 35px;
   margin-left: 35px;
   margin-top: 35px;
-  // border: 1px dashed #28292A;
+  // // border: 1px dashed #28292A;
   box-sizing: border-box;
   border-radius: 8px;
   `
 
   const FormLabel = styled.label`
+// display: flex;
+// justify-content: center;
+// align-items: center;
 color: ${props => props.invalidField ? '#FF6464' : '#ffffff'};
 font-style: normal;
 font-weight: bold;
@@ -48,14 +56,20 @@ padding:1.6em 0 .2em 0;
 `
 
   const FormInput = styled.input`
+// display: flex;
+// justify-content: center;
+// align-items: center;
 border-radius: 8px;
 margin:0 .8em;
 border: ${props => props.invalidField ? '3px solid #FF6464' : '3px solid #F3F3F3'};
 padding:.8em .5em;
-width: 30%;
+width: 75%;
 `
 
   const LoginButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 width: 150px;
 height: 50px;
 text-align: center;
